@@ -1,10 +1,17 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "aKw+YOdGHF0=",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\figgle\\0.5.1\\figgle.0.5.1.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "tLoYiZ7msxc=",
+  "success": true,
+  "projectFilePath": "/home/camper/Documentos/Conmebol/oop.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 9a0fa233e0d49c90aa6606e6ca8a73a7abec681a
   "logs": []
 }
