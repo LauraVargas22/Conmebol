@@ -9,4 +9,5 @@ public class Club
 {
     public string? Id { get; set; } = string.Empty;
     public string? Nombre { get; set; } = string.Empty;
+    public List<Player> Jugadores { get; set; } = new List<Player>();
 }
