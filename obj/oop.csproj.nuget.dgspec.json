@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/camper/Documentos/Conmebol/oop.csproj": {}
+    "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj": {}
   },
   "projects": {
-    "/home/camper/Documentos/Conmebol/oop.csproj": {
+    "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/camper/Documentos/Conmebol/oop.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj",
         "projectName": "oop",
-        "projectPath": "/home/camper/Documentos/Conmebol/oop.csproj",
-        "packagesPath": "/home/camper/.nuget/packages/",
-        "outputPath": "/home/camper/Documentos/Conmebol/obj/",
+        "projectPath": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/camper/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

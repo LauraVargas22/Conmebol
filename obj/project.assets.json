@@ -40,19 +40,19 @@
     ]
   },
   "packageFolders": {
-    "/home/camper/.nuget/packages/": {}
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/camper/Documentos/Conmebol/oop.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj",
       "projectName": "oop",
-      "projectPath": "/home/camper/Documentos/Conmebol/oop.csproj",
-      "packagesPath": "/home/camper/.nuget/packages/",
-      "outputPath": "/home/camper/Documentos/Conmebol/obj/",
+      "projectPath": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\oop.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/camper/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -102,8 +102,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\USUARIO\\Documents\\CAMPUSLANDS\\oop\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

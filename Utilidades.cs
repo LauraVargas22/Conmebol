@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Figgle;
 
 namespace oop;
+
 public class Utilidades
 {
     public static bool LeerTecla()
@@ -12,17 +9,18 @@ public class Utilidades
         while (true)
         {
             ConsoleKeyInfo tecla = Console.ReadKey(intercept: true);
-            char respuesta = char.ToUpper(tecla.KeyChar);
-            switch (respuesta)
+            char opcion = char.ToUpper(tecla.KeyChar);
+            switch (opcion)
             {
                 case 'S':
                     return true;
                 case 'N':
                     return false;
                 default:
-                    Console.WriteLine("Respuesta no válida. Por favor, ingrese 's' o 'n'.");
+                    Console.Write("\nTecla no válida. Presione S o N: ");
                     break;
             }
+
         }
     }
 
@@ -51,50 +49,53 @@ public class Utilidades
             }
         }
     }
+    public static int LeerCaracter(string titulo = "Sistema de gestión de la ",string[]? opcionesMenu= null){
 
-    public static int LeerCaracter(string titulo = "Sistema de gestión de la ",string[]? opcionesMenu= null)
-    {
-        string opcionMenu = string.Empty;
-        Console.Clear();
-        EscribirCentrado(titulo,ConsoleColor.Magenta);
-
-        if (opcionesMenu != null)
+            string entrada = string.Empty;
+            Console.Clear();
+            EscribirCentrado(titulo,ConsoleColor.Magenta);
+            //MostrarFiggleCentrado("Conmebol Libertadores.", FiggleFonts.Small, ConsoleColor.Magenta);
+            if (opcionesMenu != null)
             {
                 foreach (var opcion in opcionesMenu)
                 {
                     Console.WriteLine($"{"",-10}{opcion,0}");
                 }
             }
-        Console.Write($"{"",-10}{"Seleccione una Opcion:",-10}");
-        Console.Write($"{"",-3}");
-
-        while (true)
-        {
-            ConsoleKeyInfo tecla = Console.ReadKey(intercept: true);
-
-            if (char.IsDigit(tecla.KeyChar))
+            Console.Write($"{"",-10}{"Seleccione una Opcion:",-10}");
+            Console.Write($"{"",-3}");
+            //EscribirCentrado(titulo,ConsoleColor.Magenta);
+            while (true)
             {
-                opcionMenu += tecla.KeyChar;
-                Console.Write(tecla.KeyChar);
+                ConsoleKeyInfo tecla = Console.ReadKey(intercept: true);
+                
+                // Si es un número, agregarlo a la cadena
+                if (char.IsDigit(tecla.KeyChar))
+                {
+                    entrada += tecla.KeyChar;
+                    Console.Write(tecla.KeyChar);
+                }
+                // Si es Backspace, eliminar el último carácter
+                else if (tecla.Key == ConsoleKey.Backspace && entrada.Length > 0)
+                {  
+                    entrada = entrada.Remove(entrada.Length - 1);
+                    Console.Write("\b \b"); // Borra visualmente en consola
+                }
+                // Si presiona Enter y hay algo escrito, devolver el número
+                else if (tecla.Key == ConsoleKey.Enter && entrada.Length > 0)
+                {
+                    Console.WriteLine(); // Salto de línea tras Enter
+                    return int.Parse(entrada);
+                }
+                else
+                {
+                    // Cualquier otra tecla no se permite
+                    Console.Beep(); // Sonido de error
+                }
             }
-            else if (tecla.Key == ConsoleKey.Backspace && opcionMenu.Length > 0) //Borrar el último carácter escrito "Backspace" tecla borrar
-            {
-                opcionMenu = opcionMenu.Substring(0, opcionMenu.Length - 1);
-                Console.Write("\b \b");
-            }
-            else if (tecla.Key == ConsoleKey.Enter && opcionMenu.Length > 0)
-            {
-                Console.WriteLine();
-                return int.Parse(opcionMenu);
-            }
-            else 
-            {
-                Console.Beep();
-            }
-        }
+        
     }
-
-    public static void EscribirCentrado(string texto, ConsoleColor color)
+    public static void EscribirCentrado(string texto,ConsoleColor color)
     {
         int anchoConsola = Console.WindowWidth;
         int espaciosIzquierda = (anchoConsola - texto.Length) / 2;
@@ -103,7 +104,6 @@ public class Utilidades
         Console.WriteLine(new string(' ', Math.Max(0, espaciosIzquierda)) + texto);
         Console.ResetColor();
     }
-
     public static void MostrarFiggleCentrado(string texto, FiggleFont fuente, ConsoleColor color = ConsoleColor.White)
     {
         string textoFiggle = fuente.Render(texto);
@@ -115,7 +115,7 @@ public class Utilidades
 
         foreach (string linea in lineas)
         {
-            int espaciosIzquierda = Math.Max((anchoConsola - linea.Length) / 2, 0 );
+            int espaciosIzquierda = Math.Max((anchoConsola - linea.Length) / 2, 0);
             Console.WriteLine(new string(' ', espaciosIzquierda) + linea);
         }
 

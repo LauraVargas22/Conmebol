@@ -3,12 +3,9 @@ using oop.Equipo;
 internal class Program
 {
     public static bool continuar;
-
-    public static Club club { get; private set; }
-
+    public static List<Club> clubes = new List<Club>();
     private static void Main(string[] args)
     {
-        List<Club> clubes = new List<Club>();
         bool continuar = true;
         Console.Clear();
         string[] opcionesMenu = {
@@ -24,7 +21,7 @@ internal class Program
             case 1:
                 do
                 {
-                    club = new Club();
+                    var club = new Club();
                     Guid g = Guid.NewGuid();
                     Console.Clear();
 
@@ -46,10 +43,10 @@ internal class Program
                 } while (continuar);
                 break;
             case 2:
-                do 
+                do
                 {
-                    Console.WriteLine("\n Resgistrar Jugadores");
                     string? clubJuego;
+                    Console.WriteLine("\n Resgistrar Jugadores");
                     Console.WriteLine("Ingrese el club");
                     clubJuego = Console.ReadLine()?.ToUpper();
                     clubes.ForEach(c => {
@@ -76,17 +73,21 @@ internal class Program
 
                             Console.WriteLine("¿Desea continuar? (S/N)");
                             continuar = Utilidades.LeerTecla();
-                        } 
-                        else 
+                        }
+                        else
                         {
-                            Console.WriteLine("El club no existe.");
+                            Console.WriteLine("Club no encontrado");
                         }
                     });
                 } while (continuar);
                 break;
+
             case 3:
-                Console.Clear();
-                Console.WriteLine("Lista de clubes registrados");
+                Console.Write("Clubes Registrados");
+                foreach(Club myClub in clubes)
+                {
+                    Console.WriteLine($"ID: {myClub.Id}, Nombre: {myClub.Nombre}");
+                }
                 break;
             case 4:
                 Console.Write("Jugadores Registrados");
@@ -99,12 +100,5 @@ internal class Program
                 break;
         }
         Main(args);
-
-        // Console.Clear();
-        // Console.WriteLine("Lista de clubes registrados:");
-        // foreach(Club myClub in clubes)
-        // {
-        //     Console.WriteLine($"ID: {myClub.Id}, Nombre: {myClub.Nombre}");
-        // }
     }
 }
